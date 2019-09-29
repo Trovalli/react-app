@@ -4,3 +4,6 @@ services:
 
 before_install:
   - docker build -t trovalli/react-app -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true trovalli/react-app npm run test
